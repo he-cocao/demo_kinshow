@@ -1,0 +1,23 @@
+{% extends "bjlg/index_main.html" %}
+{% block news %}
+    <b>获取的数据有:{{ page_num }}条</b>
+    <br>
+    <ul style="border: 1px solid red;height: 800px">
+
+        {% for new in news %}
+            <div style="float: left;width: 500px">
+                {% if forloop.counter|divisibleby:2 %}
+                    第{{ forloop.counter }}条
+                    <li style="color:darkmagenta ">新闻名字:{{ new.title }}</li>
+                    <li style="color:darkmagenta ">新闻类别:{{ new.category }}</li>
+                {% else %}
+                    第{{ forloop.counter }}条
+                    <li style="color: chocolate">新闻名字:{{ new.title }}</li>
+                    <li style="color: chocolate">新闻类别:{{ new.category }}</li>
+                {% endif %}
+
+                <hr>
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock news %}

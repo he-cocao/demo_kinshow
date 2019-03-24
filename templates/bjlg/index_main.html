@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+{#    静态文件的引入#}
+    <link rel="stylesheet" type="text/css" href="/static/bjlg/css/index.css ">
+    <script type="text/javascript" src="/static/bjlg/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/bjlg/js/test.js"></script>
+</head>
+<body>
+<h1>网站首页</h1>
+<br>
+{{ msg }}
+<img src="/static/bjlg/image/633.jpg" alt="">
+<br>
+<a href="{% url "bjlg:to_login" %}">登录</a>
+<a href="/bjlg/quit">退出登录</a>
+
+<hr>
+<a href="{% url "bjlg:index_news" %}">新闻详情</a>
+
+{% block news %}
+
+{% endblock news %}
+{#哈哈哈哈#}
+</body>
+</html>

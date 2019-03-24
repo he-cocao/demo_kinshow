@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>新闻</h1>
+{#<ul>#}
+{#    {% for new in news %}#}
+{#        <li>标题:#}
+{#            <a href="#">{{ new.title }}</a>#}
+{#        </li>#}
+{##}
+{#        <li>描述:#}
+{#            <a href="#">{{ new.description }}</a>#}
+{#        </li>#}
+{#         <li>添加时间:#}
+{#            <a href="#">{{ new.addDate }}</a>#}
+{#        </li>#}
+{#          <li>状态:#}
+{#            <a href="#">{{ new.state }}</a>#}
+{#        </li>#}
+{#         <hr>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{% for category_info in category %}
+    新闻分类:{{ category_info.name }}
+
+{% endfor %}
+
+</body>
+</html>

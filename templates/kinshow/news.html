@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>新闻</h1>
+<ul>
+    {% for new in news %}
+        <li>标题:{{ forloop.counter }}
+            <a href="#">{{ new.title }}</a>
+        </li>
+
+        <li>描述:
+            <a href="#">{{ new.description }}</a>
+        </li>
+         <li>添加时间:
+            <a href="#">{{ new.addDate }}</a>
+        </li>
+          <li>新闻分类:
+            <a href="http://127.0.0.1:8000/{{ new.category.id }}">{{ new.category }}</a>
+        </li>
+         <hr>
+    {% endfor %}
+</ul>
+{% if page %}
+
+    <a href="?page={{ page|add:-1 }}">上一页</a>
+{#    <a href="{% url "kinshow:news" 1 %}">上一页</a>#}
+    <a href="?page={{ page|add:1 }}">下一页</a>
+
+{% else %}
+{#    <a href="#">{{ msg }}</a>#}
+    <a href="?page=1">请点击下一页</a>
+{% endif %}
+
+</body>
+</html>

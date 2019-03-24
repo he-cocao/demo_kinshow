@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="/static/bjlg/css/index.css ">
+</head>
+<body>
+<h1>新闻详情页</h1>
+<ul>
+    {% for news in newsPage %}
+        <li>
+            新闻标题:{{ news.title }}
+        </li>
+        <li>
+            新闻作者:{{ news.author }}
+        </li>
+        <li>
+            新闻分类:{{ news.category }}
+        </li>
+        <hr>
+    {% endfor %}
+
+</ul>
+
+<ul>
+    {% for index in newsPage.paginator.page_range %}
+{#        newsPage.number是指当前页码#}
+        {% if index == newsPage.number %}
+            <li>第{{ index }}页</li>
+        {% else %}
+            <li>
+                <a href="/bjlg/newsPage/{{ index }}">第{{ index }}页</a>
+            </li>
+
+        {% endif %}
+    {% endfor %}
+
+</ul>
+</body>
+</html>
